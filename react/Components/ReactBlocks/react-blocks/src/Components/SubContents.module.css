@@ -1,0 +1,8 @@
+.subContents{
+    min-height: 250px;
+    width: 200px;
+    background-color: yellow;
+    display: inline-block;
+    margin: 5px;
+    border: solid 2px black;
+}

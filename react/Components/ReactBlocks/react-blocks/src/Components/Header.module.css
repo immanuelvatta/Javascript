@@ -1,0 +1,7 @@
+.header{
+    min-height: 150px;
+    width: 920px;
+    background-color: green;
+    border: solid 2px black;
+    margin: 5px;
+}
