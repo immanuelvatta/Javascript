@@ -15,8 +15,9 @@ function quickSort(arr){
             rightSide.push(arr[i]);
         }
     }
-    //below is same as [...quickSort(leftSide), pivot, ...quickSort(rightSide)];
-    return [].concat(quickSort(leftSide), pivot, quickSort(rightSide));
+    [...quickSort(leftSide), pivot, ...quickSort(rightSide)];
+     //below is same as
+    // return [].concat(quickSort(leftSide), pivot, quickSort(rightSide));
     
 }
 
