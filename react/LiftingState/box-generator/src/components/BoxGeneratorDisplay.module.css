@@ -1,0 +1,13 @@
+.boxContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boxDiv {
+  width: 100px; /* Default width for the boxes */
+  height: 100px; /* Default height for the boxes */
+  margin: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
