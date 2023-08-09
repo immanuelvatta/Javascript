@@ -7,7 +7,7 @@ const TodoListDisplay = (props) => {
             <table className='table'>
                 <thead>
                     <tr>
-                        <th>List</th>
+                        <th>Tasks</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -18,7 +18,8 @@ const TodoListDisplay = (props) => {
                             return (
                                 <tr key={idx}>
                                     <td>{!eachTask.isCompleted ? eachTask.addTask : <s>{eachTask.addTask}</s>}</td>
-                                    <td><input type="checkbox" checked={eachTask.isCompleted} name="check" onChange={()=> props.checkbox(idx)} /> <button className='btn btn-danger' type='button' onClick={() => props.remove(idx)}>Delete</button></td>
+                                    <td><input type="checkbox" checked={eachTask.isCompleted} name="check" onChange={()=> props.checkbox(idx)} /> <button className='btn btn-danger' type='button' onClick={() => props.remove(idx)}>Delete</button></td> 
+                                    {/* we need callback function or it'll be iife immediately invoked function expression (we dont want it to run when the page is loaded) */}
                                 </tr>
                                 
                             )
