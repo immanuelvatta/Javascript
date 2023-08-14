@@ -1,0 +1,33 @@
+1. use my_first_db
+
+2. db.createCollection("students")
+
+3.  db.students.insertOne({name: "Immanuel",home_state: "Texas",lucky_number: 20,birthday: {month: 4,day: 20,year: 1994,}})
+    db.students.insertOne({name: "Tom",home_state: "California",lucky_number: 13,birthday: {month: 7,day: 10,year: 1985,}})
+    db.students.insertOne({name: "Robert",home_state: "Minnesota",lucky_number: 18,birthday: {month: 9,day: 29,year: 1987,}})
+    db.students.insertOne({name: "Braxton",home_state: "Indiana",lucky_number: 8,birthday: {month: 2,day: 29,year: 1992,}})
+    db.students.insertOne({name: "Vukasin",home_state: "Florida",lucky_number: 7,birthday: {month: 5,day: 6,year: 1989,}})
+
+4. db.students.find()
+
+5. db.students.find({$or: [{home_state: "California"}, {home_state: "Washington"}]})
+
+6. db.students.find({lucky_number: {$gt:3}})
+
+7. db.students.updateMany({}, {$set: {interests : ["coding", "brunch", "MongoDB"]}})
+
+8.  db.students.updateOne({name: "Immanuel"}, {$addToSet: {interests: 'gaming'}})
+    db.students.updateOne({name: "Tom"}, {$addToSet: {interests: 'running'}})
+    db.students.updateOne({name: "Robert"}, {$addToSet: {interests: 'golf'}})
+    db.students.updateOne({name: "Braxton"}, {$addToSet: {interests: 'RL'}})
+    db.students.updateOne({name: "Vukasin"}, {$addToSet: {interests: 'driving'}})
+
+9.  db.students.updateOne({name: "Vukasin"}, {$addToSet: {interests: 'taxes'}})
+10. db.students.updateOne({name: "Vukasin"}, {$pull: {interests: "taxes"}})
+
+11. db.students.deleteMany({home_state: "California"})
+12. db.students.deleteOne({name: "Vukasin"})
+13. db.students.deleteOne({lucky_number: {$gt:5}})
+14. db.students.updateMany({}, {$set: {number_of_belts: 0}})
+15. db.students.updateMany({home_state: "Indiana"}, {$inc: {number_of_belts:1}})
+16. db.students.updateMany({}, {$currentDate: {updated_on : true}})
