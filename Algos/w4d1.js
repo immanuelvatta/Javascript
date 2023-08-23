@@ -100,7 +100,14 @@ const callback3 = (elem) => false; // a callback that always returns false
  */
 
 
-function dropIt(arr, cb) {}
+function dropIt(arr, cb) {
+    for (const x of arr) {
+        if (cb(x)){
+            return arr.slice(arr.indexOf(x))
+        }
+    }
+    return []
+}
 
 console.log(dropIt(nums1, callback1))
 console.log(dropIt(nums2, callback2))
